@@ -9,9 +9,7 @@ def load_image(image):
     #ap.add_argument("-i", "--image", required = True, help = "Path to the image")
     #args = vars(ap.parse_args())
 
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    dim = (500, 300)
-    image = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
+    print("loading image")
 
 def show_img_comp(image1, image2):
     f, ax = plt.subplots(1, 2, figsize=(10,5))
@@ -22,17 +20,23 @@ def show_img_comp(image1, image2):
     f.tight_layout()
     plt.show()
 
-    load_image(image1)
-    load_image(image2)
-
 def average(image):
     img_temp = image.copy()
     img_temp[:,:,0], img_temp[:,:,1], img_temp[:,:,2] = np.average(image, axis=(0,1))
     return img_temp
 
 def main():
-    image1 = cv2.imread("C:/Users/tyrol_6l57e8e/BP_tyrolova/main/fei.jpeg")
-    image2 = cv2.imread("C:/Users/tyrol_6l57e8e/BP_tyrolova/main/fiit.jpg")
+    image1 = cv2.imread("fei.jpeg", 1)
+    image2 = cv2.imread("fiit.jpg", 1)
+
+    image1 = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
+    dim = (500, 300)
+    image1 = cv2.resize(image1, dim, interpolation = cv2.INTER_AREA)
+
+    image2 = cv2.cvtColor(image2, cv2.COLOR_BGR2RGB)
+    dim = (500, 300)
+    image2 = cv2.resize(image2, dim, interpolation = cv2.INTER_AREA)
+
     av_color_im1 = average(image1)
     av_color_im2 = average(image2)
 
