@@ -19,10 +19,13 @@ imageB = cv2.imread(args["second"], cv2.IMREAD_GRAYSCALE)
 #grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
 #grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
 
-grayA = cv2.resize(imageA, (1206,1820))
-grayB = cv2.resize(imageB, (1206,1820))
+# grayA = cv2.resize(imageA, (1206,1820))
+# grayB = cv2.resize(imageB, (1206,1820))
+x = imageB.shape[1]
+y = imageB.shape[0]
+imageA = cv2.resize(imageA, (x,y))
 
-(score, diff) = compare_ssim(grayA, grayB, full=True, multichannel=True)       #score-SSIM index, diff-actual difference converted to 8-bit in range 0-255
+(score, diff) = compare_ssim(imageA, imageB, full=True, multichannel=True)       #score-SSIM index, diff-actual difference converted to 8-bit in range 0-255
 diff = (diff * 255).astype("uint8")
 print("SSIM: {}".format(score))
 
