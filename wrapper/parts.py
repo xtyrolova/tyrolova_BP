@@ -22,4 +22,3 @@ for i in range(0, parts):
         ax[i][j].axis('off') #hide the axis
         f.tight_layout()
 plt.show()
-
