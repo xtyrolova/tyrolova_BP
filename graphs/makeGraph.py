@@ -1,4 +1,6 @@
-import csv
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
 
 # class Photo:
 #     def __init__(self, id, first, second, value):
@@ -7,22 +9,9 @@ import csv
 #         self.second = second
 #         self.value = value
 
-data = open('dtb.csv', 'r')
-file = csv.DictReader(data, delimiter=';')
+df = pd.read_csv('mse.csv', delimiter=';')
+sns.histplot(data=df, x='ID', y='MSE', bins=20, color="pink")
 
-ids = []
-images1 = []
-images2 = []
-values = []
-
-for col in file:
-    col.keys()
-    ids.append(col['ID'])
-    images1.append(col['path1'])
-    images2.append(col['path2'])
-    values.append(col['value'])
-
-# print('ids:', ids)
-# print('img1:', images1)
-# print('img2:', images2)
-# print('val:', values)
+plt.xlabel('ID')
+plt.ylabel('MSE')
+plt.show()
