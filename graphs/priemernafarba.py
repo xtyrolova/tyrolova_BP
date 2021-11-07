@@ -26,15 +26,15 @@ def average(image):
     return img_temp
 
 def main():
-    image1 = cv2.imread("fei.jpeg", 1)
-    image2 = cv2.imread("fiit.jpg", 1)
+    image1 = cv2.imread("images/SK_MRS_1266_A38_r.jpg", 1)
+    image2 = cv2.imread("images/SK_MRS_1266_B9_r.jpg", 1)
 
     image1 = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
-    dim = (500, 300)
+    dim = (1280, 900)
     image1 = cv2.resize(image1, dim, interpolation = cv2.INTER_AREA)
 
     image2 = cv2.cvtColor(image2, cv2.COLOR_BGR2RGB)
-    dim = (500, 300)
+    dim = (1280, 900)
     image2 = cv2.resize(image2, dim, interpolation = cv2.INTER_AREA)
 
     av_color_im1 = average(image1)
