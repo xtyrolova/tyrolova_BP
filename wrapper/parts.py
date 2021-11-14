@@ -9,9 +9,9 @@ sizeX = image.shape[1]
 sizeY = image.shape[0]
 
 parts = 5
-f, ax = plt.subplots(parts, parts, figsize=(10,5), num="Parts")
+f, ax = plt.subplots(parts, parts, figsize=(10, 5), num="Parts")
 for i in range(0, parts):
-    row=[]
+    row = []
     for j in range(0, parts):
         start_y = i * sizeY / parts
         end_y = i * sizeY / parts + sizeY / parts
@@ -19,6 +19,6 @@ for i in range(0, parts):
         end_x = j * sizeX / parts + sizeX / parts
         roi = grayImage[int(start_y):int(end_y), int(start_x):int(end_x)]
         ax[i][j].imshow(roi)
-        ax[i][j].axis('off') #hide the axis
+        ax[i][j].axis('off')   # hide the axis
         f.tight_layout()
 plt.show()
