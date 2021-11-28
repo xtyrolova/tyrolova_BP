@@ -17,3 +17,4 @@ x = preprocess_input(x)
 
 features = model.predict(x)
 print(features)
+
