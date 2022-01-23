@@ -8,7 +8,7 @@ import numpy as np
 
 model = ResNet50(weights='imagenet')
 
-img_path = 'SK_MRS_1264_B1_r.jpg'
+img_path = '../distance_metrics/images/SK_MRS_1264_B1_r.jpg'
 img = image.load_img(img_path, target_size=(224, 224))
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)

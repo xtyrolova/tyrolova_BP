@@ -58,7 +58,7 @@ def makeParts(path1, path2):
 
 
 # OPEN AND LOAD DATASET
-f = open('dtb.csv', 'r')
+f = open('../networks/distance_metrics/dtb.csv', 'r')
 file = csv.DictReader(f, delimiter=';')
 
 ids = []

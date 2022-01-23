@@ -26,8 +26,8 @@ def average(image):
     return img_temp
 
 def main():
-    image1 = cv2.imread("images/SK_MRS_1266_A38_r.jpg", 1)
-    image2 = cv2.imread("images/SK_MRS_1266_B9_r.jpg", 1)
+    image1 = cv2.imread("../networks/distance_metrics/images/SK_MRS_1266_A38_r.jpg", 1)
+    image2 = cv2.imread("../networks/distance_metrics/images/SK_MRS_1266_B9_r.jpg", 1)
 
     image1 = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
     dim = (1280, 900)
