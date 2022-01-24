@@ -26,13 +26,15 @@ ids = []
 values = []
 images1 = []
 images2 = []
+id = 0
 
 for col in file:
     col.keys()
-    ids.append(col['ID'])
+    ids.append(id)
     values.append(col['value'])
     images1.append(col['path1'])
     images2.append(col['path2'])
+    id += 1
 
 header = ['ID', 'value', 'Euclid']
 
@@ -43,6 +45,10 @@ writer.writerow(header)
 for i in range(len(ids)):
     euclid_array1 = vgg16_process(images1[i])
     euclid_array2 = vgg16_process(images2[i])
+    euclid_array1 = np.concatenate(euclid_array1)
+    euclid_array2 = np.concatenate(euclid_array2)
+    euclid_array1 = np.concatenate(euclid_array1)
+    euclid_array2 = np.concatenate(euclid_array2)
 
     distance = euclidean_distances(euclid_array1, euclid_array2)
     distance = np.concatenate(distance)

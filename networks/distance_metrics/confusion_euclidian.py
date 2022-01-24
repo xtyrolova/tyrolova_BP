@@ -16,6 +16,7 @@ def find_treshold(min, max, actual, prediction, euclid):
             else:
                 prediction[j] = '0'
         acc = accuracy_score(actual, prediction, normalize=False)
+        print(acc)
         if acc > best_acc:
             best_acc = acc
             best_val = i
@@ -24,7 +25,7 @@ def find_treshold(min, max, actual, prediction, euclid):
     return best_val
 
 
-f = open('euclid_resnet50.csv', 'r')
+f = open('euclid_vgg16.csv', 'r')
 data = csv.DictReader(f, delimiter=';')
 
 actual = []
