@@ -13,7 +13,7 @@ fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 fig.suptitle('MSE0 vs MSE1')
 
 # maska MSE 0 a 1
-dataMSE = pd.read_csv('ms   e.csv', delimiter=';')
+dataMSE = pd.read_csv('mse.csv', delimiter=';')
 # rozdelit do dvoch dataframov, v jednom budu len 0, v druhom len rovnake 1
 maskaM = (dataMSE.value == 0)
 dataMSE0 = dataMSE[maskaM]
